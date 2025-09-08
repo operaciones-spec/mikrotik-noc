@@ -1,0 +1,84 @@
+{
+  "poll_interval": 15,
+  "prometheus": {
+    "enabled": true,
+    "listen_addr": "0.0.0.0",
+    "listen_port": 9102
+  },
+  "devices": [
+    {
+      "name": "CORE-1",
+      "ip": "192.168.56.110",
+      "user": "admin",
+      "pass": "",
+      "api_port": 8728,
+      "role": "core",
+      "expected_speed_mbps": 1000
+    },
+    {
+      "name": "CORE-2",
+      "ip": "192.168.56.111",
+      "user": "admin",
+      "pass": "",
+      "api_port": 8728,
+      "role": "core",
+      "expected_speed_mbps": 1000
+    },
+    {
+      "name": "ROUTER-P1",
+      "ip": "192.168.56.109",
+      "user": "admin",
+      "pass": "",
+      "api_port": 8728,
+      "role": "core",
+      "expected_speed_mbps": 1000
+    },
+    {
+      "name": "ROUTER-P2",
+      "ip": "192.168.56.108",
+      "user": "admin",
+      "pass": "",
+      "api_port": 8728,
+      "role": "core",
+      "expected_speed_mbps": 1000
+    },
+    {
+      "name": "Access-PE3",
+      "ip": "192.168.56.106",
+      "user": "admin",
+      "pass": "",
+      "api_port": 8728,
+      "role": "core",
+      "expected_speed_mbps": 1000
+    },
+    {
+      "name": "Access-PE4",
+      "ip": "192.168.56.115",
+      "user": "admin",
+      "pass": "",
+      "api_port": 8728,
+      "role": "core",
+      "expected_speed_mbps": 1000
+    },
+    {
+      "name": "Acces-PE5",
+      "ip": "192.168.56.112",
+      "user": "admin",
+      "pass": "",
+      "api_port": 8728,
+      "role": "core",
+      "expected_speed_mbps": 1000
+    }
+  ],
+  "alerting": {
+    "webhook": "https://discord.com/api/webhooks/1411114539411570798/RxhrROZW8JCFRf6Kokw6UBOON0t3-DyatN4BS4D7ZOzFV1BOm3USQ1NG2chyIbm-wSUW",
+    "slack_token": null,
+    "provider": "discord"
+  },
+  "thresholds": {
+    "err_per_sec": 1.0,
+    "flaps_window": 300,
+    "flaps_count": 3
+  },
+  "db_path": "state_api.db"
+}

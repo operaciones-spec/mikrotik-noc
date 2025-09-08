@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  mikrotik-collector:
+    build: .
+    container_name: mikrotik_collector
+    restart: unless-stopped
+    volumes:
+      - ./mi_config.json:/app/mi_config.json:ro
+      - ./state_api.db:/app/state_api.db
+    ports:
+      - "9102:9102"
+    environment:
+      - PYTHONUNBUFFERED=1

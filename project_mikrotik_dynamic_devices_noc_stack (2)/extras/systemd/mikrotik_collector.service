@@ -1,0 +1,15 @@
+[Unit]
+Description=MikroTik NOC Collector
+After=network-online.target
+
+[Service]
+Type=simple
+User=www-data
+WorkingDirectory=/opt/mikrotik_collector
+Environment="PATH=/opt/mikrotik_collector/.venv/bin"
+ExecStart=/opt/mikrotik_collector/.venv/bin/python /opt/mikrotik_collector/run_api_collector.py -c /opt/mikrotik_collector/mi_config.json
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
